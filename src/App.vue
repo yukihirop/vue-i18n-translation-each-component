@@ -1,10 +1,23 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">{{ $et("link.home") }}</router-link> |
+    <router-link to="/about">{{ $et("link.about") }}</router-link>
   </div>
   <router-view />
 </template>
+
+<script lang="ts">
+import { getCurrentInstance, onMounted } from 'vue'
+
+export default {
+  setup(){
+    const vm = getCurrentInstance()!.proxy
+    onMounted(() => {
+      console.log('vm', vm)
+    })
+  }
+}
+</script>>
 
 <style lang="scss">
 #app {

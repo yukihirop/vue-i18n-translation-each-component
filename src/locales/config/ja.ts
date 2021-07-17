@@ -1,0 +1,14 @@
+export default {
+  "src/App.vue": {
+    link: {
+      home: "ホーム",
+      about: "About",
+    },
+  },
+  "src/views/About.vue": {
+    title: "これは「About」に関するページです",
+  },
+  "src/views/Home.vue": {
+    message: "Vue.jsへようこそ + TypeScript App",
+  },
+};
