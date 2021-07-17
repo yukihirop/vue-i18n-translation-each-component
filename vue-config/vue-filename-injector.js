@@ -3,11 +3,12 @@
  * @see https://vue-loader.vuejs.org/guide/custom-blocks.html#example
  */
 
+const path = require("path");
 const loaderUtils = require("loader-utils");
 const blockName = "vue-filename-injector";
 const defaultPropName = "__source";
 
-const loader = (content) => {
+const loader = function (content) {
   const loaderContext = this;
 
   const { rootContext, resourcePath } = loaderContext;
@@ -29,7 +30,7 @@ export default function (Component) {
 }
 </${blockName}>
 `;
-  
+
   return content;
 };
 
@@ -41,4 +42,4 @@ module.exports = function (config, options) {
     .options(options)
     .after("vue-loader")
     .end();
-}
+};
