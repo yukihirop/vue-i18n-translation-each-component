@@ -1,5 +1,5 @@
 import i18n from "@/locales";
-import { getCurrentInstance } from 'vue';
+import { getCurrentInstance } from "vue";
 
 /**
  * @see https://github.com/vuejs/vue-devtools/blob/8e42bfec667489bb52e13b9885c1e684e0f1cc2a/src/backend/index.js#L328
@@ -8,15 +8,15 @@ import { getCurrentInstance } from 'vue';
  */
 export default {
   install(app: any, _options: any) {
-    app.use(i18n)
-    app.config.globalProperties.$et = function (
-      key: string,
-      options: any
-    ) {
+    app.use(i18n);
+    app.config.globalProperties.$et = function (key: string, options: any) {
       const vm = getCurrentInstance()!.proxy!;
       const fn = vm.$t.bind(this);
       //「vue-filename-injector」 sets $options.__source to file path to itself at compile time
-      const compPath = this.$options.__source.replace(/\.[^/.]+$/, "");
+      console.log(vm.$options);
+      // const compPath = vm.$options.__source.replace(/\.[^/.]+$/, "");
+
+      const compPath = "hoge";
 
       return fn(`${compPath}.${key}`, options);
     };

@@ -7,17 +7,19 @@
 </template>
 
 <script lang="ts">
-import { getCurrentInstance, onMounted } from 'vue'
+import { getCurrentInstance, onMounted } from "vue";
 
 export default {
-  setup(){
-    const vm = getCurrentInstance()!.proxy
+  setup() {
+    const vm = getCurrentInstance()!.proxy!;
     onMounted(() => {
-      console.log('vm', vm)
-    })
-  }
-}
-</script>>
+      console.log("vm", vm);
+    });
+
+    return {};
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
