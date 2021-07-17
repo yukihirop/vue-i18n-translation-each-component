@@ -24,7 +24,7 @@ module.exports = function (content) {
   content += `
 <${blockName}>
 export default function (Component) {
-  Component.$options.${propName} = ${JSON.stringify(
+  Component.${propName} = ${JSON.stringify(
     rawShortFilePath.replace(/\\/g, "/")
   )}
 }

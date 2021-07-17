@@ -14,9 +14,7 @@ export default {
       const fn = vm.$t.bind(this);
       //「vue-filename-injector」 sets $options.__source to file path to itself at compile time
       console.log(vm.$options);
-      // const compPath = vm.$options.__source.replace(/\.[^/.]+$/, "");
-
-      const compPath = "hoge";
+      const compPath = vm.$options.__source.replace(/\.[^/.]+$/, "");
 
       return fn(`${compPath}.${key}`, options);
     };

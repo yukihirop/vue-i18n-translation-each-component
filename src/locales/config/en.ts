@@ -1,14 +1,14 @@
 export default {
-  "src/App.vue": {
+  "src/App": {
     link: {
       home: "Home",
       about: "About",
     },
   },
-  "src/views/About.vue": {
+  "src/views/About": {
     title: "This is an about page",
   },
-  "src/views/Home.vue": {
+  "src/views/Home": {
     message: "Welcome to Your Vue.js + TypeScript App",
   },
 };
