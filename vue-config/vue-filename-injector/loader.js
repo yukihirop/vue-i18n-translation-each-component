@@ -8,7 +8,7 @@ const loaderUtils = require("loader-utils");
 const blockName = "vue-filename-injector";
 const defaultPropName = "__source";
 
-const loader = function (content) {
+module.exports = function (content) {
   const loaderContext = this;
 
   const { rootContext, resourcePath } = loaderContext;
@@ -31,14 +31,4 @@ export default function (Component) {
 </${blockName}>
 `;
   return content;
-};
-
-module.exports = function (config, options) {
-  config.module
-    .rule("vue")
-    .use("vue-filename-injector")
-    .loader(loader)
-    .options(options)
-    .after("vue-loader")
-    .end();
 };
